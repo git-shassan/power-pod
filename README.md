@@ -1,3 +1,6 @@
+A simply yet powerful pod that runs as a job inside a cluster, and can be used to execute various OC commands as part of an automated process... 
+
+'''
 shassan@SM-1 power_pod % oc apply -k ./power-pod 
 serviceaccount/cli-job-sa created
 clusterrolebinding.rbac.authorization.k8s.io/cli-job-sa-testing-rolebinding created
@@ -20,3 +23,4 @@ master3   Ready                      master,worker   87d   v1.23.5+012e945
 worker1   Ready,SchedulingDisabled   worker          87d   v1.23.5+012e945
 worker2   Ready                      worker          87d   v1.23.5+012e945
 [root@testjob-dp2pr /]#
+'''
