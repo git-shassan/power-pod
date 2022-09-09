@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: testjob
+  namespace: testing
+spec:
+  template:
+    spec:
+      dnsPolicy: ClusterFirst
+      restartPolicy: OnFailure
+      serviceAccount: cli-job-sa
+      serviceAccountName: cli-job-sa
+      terminationGracePeriodSeconds: 30
+      containers:
+        - image: registry.redhat.io/openshift4/ose-tools-rhel8:latest 
+          name: testjob
+          command:
+            - /bin/bash
+            - -c
+            - |
+              while true; do echo "hello"; sleep 10; done

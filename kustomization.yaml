@@ -1,0 +1,7 @@
+namespace: my-namespace
+commonLabels:
+  app: bingo
+resources:
+- serviceaccount.yaml
+- job.yaml
+- rolebinding.yaml
