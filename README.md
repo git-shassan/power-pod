@@ -1,6 +1,6 @@
 A simple pod that runs as a job inside a cluster using privilaged service account. This can be used to execute various OC commands as part of an automated process... 
 
-== Running the POD:
+## Running the POD:
 ```
 shassan@SM-1 power_pod % oc apply -k ./power-pod 
 serviceaccount/cli-job-sa created
@@ -13,11 +13,11 @@ pod/testjob-dp2pr   1/1     Running   0          17s
 NAME                COMPLETIONS   DURATION   AGE
 job.batch/testjob   0/1           17s        17s
 ```
-== Connecting to the POD:
+## Connecting to the POD:
 ```
 shassan@SM-1 power_pod % oc exec -it testjob-dp2pr -n my-namespace -- /bin/bash
 ```
-== Now from witnin the POD:
+## Now from witnin the POD:
 ```
 [root@testjob-dp2pr /]# oc get nodes
 NAME      STATUS                     ROLES           AGE   VERSION
