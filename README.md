@@ -1,5 +1,6 @@
-A simpl pod that runs as a job inside a cluster using privilaged service account. This can be used to execute various OC commands as part of an automated process... 
+A simple pod that runs as a job inside a cluster using privilaged service account. This can be used to execute various OC commands as part of an automated process... 
 
+== Running the POD:
 ```
 shassan@SM-1 power_pod % oc apply -k ./power-pod 
 serviceaccount/cli-job-sa created
@@ -11,10 +12,13 @@ pod/testjob-dp2pr   1/1     Running   0          17s
 
 NAME                COMPLETIONS   DURATION   AGE
 job.batch/testjob   0/1           17s        17s
-shassan@SM-1 power_pod % oc exec -it testjob-dp2pr -n my-namespace -- /bin/exec
-ERRO[0000] exec failed: unable to start container process: exec: "/bin/exec": stat /bin/exec: no such file or directory 
-command terminated with exit code 255
+```
+== Connecting to the POD:
+```
 shassan@SM-1 power_pod % oc exec -it testjob-dp2pr -n my-namespace -- /bin/bash
+```
+== Now from witnin the POD:
+```
 [root@testjob-dp2pr /]# oc get nodes
 NAME      STATUS                     ROLES           AGE   VERSION
 master1   Ready                      master,worker   87d   v1.23.5+012e945
