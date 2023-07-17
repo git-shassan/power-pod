@@ -2,6 +2,7 @@ namespace: my-namespace
 commonLabels:
   app: bingo
 resources:
+- ns.yaml
 - serviceaccount.yaml
 - job.yaml
 - rolebinding.yaml
