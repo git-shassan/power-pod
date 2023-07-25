@@ -32,6 +32,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - image: registry.redhat.io/openshift4/ose-tools-rhel8:latest 
+          # ref: https://catalog.redhat.com/software/containers/openshift4/ose-cli/5cd9ba3f5a13467289f4d51d?tag=v4.12.0-202307071529.p0.gea7c11a.assembly.stream&push_date=1689729113000
           name: testjob
           command:
             - /bin/bash
